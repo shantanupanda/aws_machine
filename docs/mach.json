@@ -19,11 +19,13 @@
   "machine" : [
 
     {
-      "name" : "machineapp"
+      "name" : "machineapp",
+      "recipe" : "aws_machine::vim"
     },
 
     {
-      "name" : "machineDB"
+      "name" : "machineDB",
+      "recipe" : "aws_machine::vim"
     }
 
   ]

@@ -18,7 +18,7 @@ with_machine_options :ssh_username => "#{aws['ssh_username']}",
 machine_batch do
   aws['machine'].each do |machine|
 		machine "#{machine['name']}" do
-			recipe "aws_machine::vim"
+			recipe "#{machine['recipe']}"
 		end
 end
 end
