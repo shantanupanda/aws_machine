@@ -1,9 +1,1 @@
-default[:aws_machine][:region]="aws::us-west-2"
-default[:aws_machine][:key_name]="anshul_aws"
-default[:aws_machine][:instance_type]="t2.micro"
-default[:aws_machine][:public_ip]="true"
-default[:aws_machine][:image_id]="ami-775e4f16"
-default[:aws_machine][:security_group_ids]="sg-05a08f61"
-default[:aws_machine][:subnet_id]="subnet-1928cd40"
-default[:aws_machine][:ssh_username]="ec2-user"
-default[:aws_machine][:machine_name]="rhel-test6"
+

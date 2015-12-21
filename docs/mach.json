@@ -1,0 +1,32 @@
+{
+
+  "region": "us-west-2",
+
+  "key_name" : "anshul_aws",
+
+  "instance_type" : "t2.micro",
+
+  "public_ip" : "true",
+
+  "image_id" : "ami-775e4f16",
+
+  "security_group_ids" : "sg-05a08f61",
+
+  "subnet_id" : "subnet-1928cd40",
+
+  "ssh_username" : "ec2-user",
+
+  "machine" : [
+
+    {
+      "name" : "machineapp"
+    },
+
+    {
+      "name" : "machineDB"
+    }
+
+  ]
+
+
+ }

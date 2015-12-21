@@ -1,17 +1,26 @@
 require 'chef/provisioning/aws_driver'
 
-with_driver node[:aws_machine][:region]
+aws = JSON.parse(File.read("/home/anshulp/hosted_chef/cookbooks/aws_machine/docs/mach.json"))
+
+with_driver "aws::#{aws['region']}"do
 
 
-machine node[:aws_machine][:machine_name] do
-	recipe 'aws_machine::vim'
-	machine_options :bootstrap_options => {
-	:key_name => node[:aws_machine][:key_name],
-	:instance_type => node[:aws_machine][:instance_type],
-	:associate_public_ip_address => node[:aws_machine][:public_ip],
-	:image_id => node[:aws_machine][:image_id],
-	:security_group_ids => node[:aws_machine][:security_group_ids],
-	:subnet_id => node[:aws_machine][:subnet_id]
-},
-	:ssh_username => node[:aws_machine][:ssh_username]
+with_machine_options :ssh_username => "#{aws['ssh_username']}",
+	:bootstrap_options => {
+		:key_name => "#{aws['key_name']}",
+		:instance_type => "#{aws['instance_type']}",
+		:associate_public_ip_address => "#{aws['public_ip']}",
+		:image_id => "#{aws['image_id']}",
+		:security_group_ids => "#{aws['security_group_ids']}",
+		:subnet_id => "#{aws['subnet_id']}"
+	}
+
+machine_batch do
+  aws['machine'].each do |machine|
+		machine "#{machine['name']}" do
+			recipe "aws_machine::vim"
+		end
+end
+end
+
 end
