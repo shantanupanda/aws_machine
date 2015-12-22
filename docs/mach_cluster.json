@@ -10,25 +10,20 @@
 
   "image_id" : "ami-775e4f16",
 
-  "security_group_ids" : "sg-05a08f61",
+  "security_group_ids" : "sg-1c650079",
 
   "subnet_id" : "subnet-1928cd40",
 
   "ssh_username" : "ec2-user",
 
-  "machine" : [
-
+  "machine" :
     {
       "name" : "machineapp",
       "recipe" : "aws_machine::vim"
     },
 
-    {
-      "name" : "machineDB",
-      "recipe" : "aws_machine::vim"
-    }
+  "count" : 2
 
-  ]
 
 
  }

@@ -1,6 +1,6 @@
 require 'chef/provisioning/aws_driver'
 
-aws = JSON.parse(File.read("/home/anshulp/hosted_chef/cookbooks/aws_machine/docs/mach.json"))
+aws = JSON.parse(File.read("/home/anshulp/hosted_chef/cookbooks/aws_machine/docs/mach_cluster.json"))
 
 with_driver "aws::#{aws['region']}"do
 
@@ -15,12 +15,13 @@ with_machine_options :ssh_username => "#{aws['ssh_username']}",
 		:subnet_id => "#{aws['subnet_id']}"
 	}
 
-machine_batch do
-  aws['machine'].each do |machine|
-		machine "#{machine['name']}" do
-			recipe "#{machine['recipe']}"
-		end
-end
-end
 
+#Cluster Creation
+machine_batch  do
+	1.upto(aws['count']) do |count|
+		machine "#{aws['machine']['name']}_#{count}"do
+			recipe "#{aws['machine']['recipe']}"
+		end
+	end
+end
 end

@@ -1,0 +1,28 @@
+{
+  "region": "us-west-2",
+  "machine" : [
+    {
+      "name" : "machinestack1",
+      "recipe" : "aws_machine::vim",
+      "ssh_username" : "ec2-user",
+      "key_name" : "anshul_aws",
+      "instance_type" : "t2.micro",
+      "public_ip" : "true",
+      "image_id" : "ami-775e4f16",
+      "security_group_ids" : "sg-1c650079",
+      "subnet_id" :"subnet-1928cd40"
+    },
+
+    {
+      "name" : "machinestack2",
+      "recipe" : "aws_machine::vim",
+      "ssh_username" : "ec2-user",
+      "key_name" : "anshul_aws",
+      "instance_type" : "t2.micro",
+      "public_ip" : "true",
+      "image_id" : "ami-775e4f16",
+      "security_group_ids" : "sg-1c650079",
+      "subnet_id" :"subnet-1928cd40"
+    }
+    ]
+ }
