@@ -10,7 +10,8 @@
       "public_ip" : "true",
       "image_id" : "ami-775e4f16",
       "security_group_ids" : "sg-1c650079",
-      "subnet_id" :"subnet-1928cd40"
+      "subnet_id" :"subnet-1928cd40",
+      "recipe" : "lamp_chef::apache2"
     },
 
     {
@@ -22,7 +23,8 @@
       "public_ip" : "true",
       "image_id" : "ami-775e4f16",
       "security_group_ids" : "sg-1c650079",
-      "subnet_id" :"subnet-1928cd40"
+      "subnet_id" :"subnet-1928cd40",
+      "recipe" : "lamp_chef::apache2"
     }
     ]
  }

@@ -19,7 +19,7 @@
   "machine" :
     {
       "name" : "machineapp",
-      "recipe" : "aws_machine::vim"
+      "recipe" : "lamp_chef::apache2"
     },
 
   "count" : 2

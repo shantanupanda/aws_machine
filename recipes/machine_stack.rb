@@ -18,6 +18,8 @@ machine_batch  do
             :subnet_id => "#{machine['subnet_id']}"
           },
           :ssh_username => "#{machine['ssh_username']}"
+
+	recipe "#{machine['recipe']}"
     end
 
 end

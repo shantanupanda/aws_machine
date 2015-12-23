@@ -5,4 +5,4 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 
-include_recipe 'aws_machine::machine_stack'
+include_recipe 'aws_machine::machine_cluster'
