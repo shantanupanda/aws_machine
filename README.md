@@ -81,7 +81,7 @@ chef_server_url          "https://api.chef.io/organizations/deathstartatooine"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 private_keys  '<key>' => '<key_location>'
 ```
-3. Export the AWS credentials in the environment.
+* Export the AWS credentials in the environment.
 
 ```
 export AWS_ACCESS_KEY_ID=
